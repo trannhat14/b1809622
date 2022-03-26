@@ -67,7 +67,7 @@ function updateRecord(req, res) {
 router.get('/list', (req, res) => {
     Employee.find((err, docs) => {
         if (!err) {
-            res.render("employee/list", {
+            res.render("/list", {
                 list: docs
             })
         }
@@ -88,7 +88,7 @@ router.get('/:id', (req, res) => {
 router.get('/delete/:id', (req, res) => {
     Employee.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
-            res.redirect('/employee/list');
+            res.redirect('/list');
         }
         else {
             console.log("An error occured during the Delete Process" + err);
