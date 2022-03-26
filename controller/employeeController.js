@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
     res.render("employee/addOrEdit", {
-        viewTitle: "Insert Employee"
+        viewTitle: "Thêm Thông Tin Sinh Viên"
     })
 })
 
