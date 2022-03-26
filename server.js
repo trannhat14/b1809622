@@ -24,9 +24,7 @@ app.engine('hbs', expressHandlebars({
     },
 }))
 
-app.get('/', function (req, res) {
-    res.send('Hello world')
-})
+
 app.set('view engine', 'hbs');
 
 const port = process.env.PORT || 3000
@@ -34,4 +32,4 @@ app.listen(port, () => {
     console.log("Server is listening on Port 3000");
 })
 
-app.use('/employee', employeeController);
+app.use('/', employeeController);
