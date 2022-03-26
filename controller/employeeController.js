@@ -20,10 +20,12 @@ router.post("/", (req, res) => {
 
 function insertRecord(req, res) {
     var employee = new Employee();
-    employee.fullName = req.body.fullName;
+    employee.hoten = req.body.hoten;
+    employee.ngaysinh = req.body.ngaysinh;
+    employee.gioitinh = req.body.gioitinh;
     employee.email = req.body.email;
-    employee.city = req.body.city;
-    employee.mobile = req.body.mobile;
+    employee.sdt = req.body.sdt;
+    employee.quequan = req.body.quequan;
 
     employee.save((err, doc) => {
         if (!err) {
@@ -98,7 +100,7 @@ function handleValidationError(err, body) {
     for (field in err.errors) {
         switch (err.errors[field].path) {
             case 'fullName':
-                body['fullNameError'] = err.errors[field].message;
+                body['hotenError'] = err.errors[field].message;
                 break;
 
             case 'email':
