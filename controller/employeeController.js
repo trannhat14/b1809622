@@ -53,7 +53,7 @@ function updateRecord(req, res) {
             if (err.name == "ValidationError") {
                 handleValidationError(err, req.body);
                 res.render("employee/addOrEdit", {
-                    viewTitle: 'Cập nhật thông tin',
+                    viewTitle: 'Update Employee',
                     employee: req.body
                 });
             }
@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
     Employee.findById(req.params.id, (err, doc) => {
         if (!err) {
             res.render("employee/addOrEdit", {
-                viewTitle: "Update Employee",
+                //viewTitle: "Update Employee",
                 employee: doc
             })
         }
